@@ -1,0 +1,28 @@
+@import "../config/vars";
+
+
+.footer {
+  &__quick-link {
+    padding: 6px 0;
+    color: #000000;
+  }
+  &__social {
+    margin-top: 70px;
+  }
+  &__social-item {
+  }
+  &__social-icon {
+    width: 50px;
+    height: 50px;
+  }
+  &__copyright {
+    background: #f0f0f0;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    &__social {
+      margin-top: 30px;
+    }
+  }
+}
+

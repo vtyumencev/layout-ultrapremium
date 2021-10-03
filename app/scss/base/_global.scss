@@ -1,0 +1,41 @@
+@import '../config/vars';
+
+:root {
+}
+
+html,
+body {
+	height: 100%;
+	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+}
+a {
+
+}
+
+input,
+button,
+textarea,
+select {
+	font-family: 'Montserrat', sans-serif;
+}
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+}
+textarea {
+	resize: vertical;
+	min-height: 90px;
+}
+
+
+h1 {
+}
+h2 {
+}
+
+@media only screen and (max-width: 500px) {
+}
+
+

@@ -1,0 +1,6 @@
+@mixin gradient-title() {
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #878787 20%, #fff 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

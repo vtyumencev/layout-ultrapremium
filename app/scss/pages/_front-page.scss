@@ -1,0 +1,305 @@
+@import '../mixins/utilities';
+@import '../config/vars';
+
+/* Banner */
+.banner-screen {
+  height: 620px;
+  @media (max-width: 768px) {
+    & {
+      height: 460px;
+    }
+  }
+  .swiper-pagination-bullet {
+    background: #FFFFFF;
+    transition: 0.2s;
+  }
+  .swiper-pagination-bullet-active {
+    transform: scale(1.3);
+  }
+}
+.banner-slide {
+  padding: 0 15px;
+  &__title {
+    font-size: 50px;
+  }
+  &__sub-title {
+    font-size: 45px;
+    margin-top: 10px;
+  }
+  &__description {
+    font-size: 20px;
+    margin-top: 50px;
+  }
+  @media (max-width: 768px) {
+    &__title {
+      font-size: 30px;
+    }
+    &__sub-title {
+      font-size: 25px;
+      margin-top: 10px;
+    }
+    &__description {
+      font-size: 16px;
+      margin-top: 50px;
+    }
+  }
+}
+
+
+/* Quote block */
+$quote_roof_height: 80px;
+.quote-block {
+  position: relative;
+  padding-top: $quote_roof_height;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: calc( 50% + #{$quote_roof_height / 2} );
+    background: #000000;
+  }
+  &__box {
+    position: relative;
+    padding: 10px 36px 45px;
+    border-radius: 0 0 10px 10px;
+    &:before {
+      content: '';
+      position: absolute;
+      height: $quote_roof_height;
+      width: 100%;
+      top: - $quote_roof_height / 2;
+      left: 0;
+      transform: skewY(3deg);
+      border-radius: 10px;
+      background: $primary;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid $primary;
+      bottom: -10px;
+      left: 185px;
+      transform: rotate(60deg);
+    }
+  }
+  &__content {
+    position: relative;
+  }
+  &__text {
+    font-size: 24px;
+    font-weight: 300;
+  }
+  &__input {
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+  }
+  &__input::placeholder {
+    color: #FFFFFF;
+  }
+  &__input:focus {
+    background: transparent;
+    color: #FFFFFF;
+  }
+  &__submit {
+    background: #FFFFFF;
+    color: #000000;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  &__submit:hover,
+  &__submit:focus {
+    background: #FFFFFF;
+    color: #000000;
+  }
+  @media (max-width: 992px) {
+    &__form {
+      margin-top: 40px;
+    }
+  }
+  @media (max-width: 576px) {
+    &__box {
+      padding: 0 16px 30px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Why us */
+.whyus-screen {
+  margin-top: 60px;
+  &__title {
+    color: #6f6f6f;
+  }
+  &__paragraph {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #858484;
+    font-weight: 300;
+  }
+  &__items {
+    margin-top: 50px;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__picture {
+    background: $primary;
+    width: 115px;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  &__icon {
+    color: #FFFFFF;
+    font-size: 50px;
+    display: flex;
+  }
+  &__item-p {
+    margin-top: 30px;
+    text-align: center;
+  }
+  @media (min-width: 769px) {
+    &__item:not(:first-child):before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      left: 0;
+      background: #e7e7e7;
+    }
+    &__item-p {
+      padding: 0 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    &__paragraph {
+      font-size: 20px;
+    }
+    &__item {
+      max-width: 340px;
+      margin: 0 auto 40px auto;
+    }
+    &__item:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Checks */
+.check-screen {
+  margin-top: 90px;
+  &__text {
+    background: #f1f1f1;
+  }
+  &__picture {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &__imager-wrapper {
+    height: 100%;
+    background: #bdbdbd;
+  }
+  &__imager {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  &__list {
+    padding: 0;
+  }
+  &__list li {
+    margin-top: 25px;
+    position: relative;
+    padding-left: 50px;
+  }
+  &__list li:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url($assetPath + 'images/icons/check-lg.svg');
+    opacity: 0.5;
+  }
+}
+
+/* Reviews */
+.review-screen {
+  margin-top: 90px;
+  &__quote {
+    background: #0056a6;
+  }
+  &__picture {
+    width: 120px;
+    height: 120px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 8px solid #e3e3e3;
+    object-fit: cover;
+  }
+  &__quote {
+    padding: 65px 35px 85px;
+  }
+  &__author {
+    margin: -25px 20px 0;
+  }
+  &__name {
+    font-size: 14px;
+  }
+  &__caption {
+    font-size: 12px;
+  }
+  @media (max-width: 1200px) and (min-width: 993px), (max-width: 576px) {
+    &__author {
+      margin-top: -15px;
+    }
+    &__picture {
+      width: 80px;
+      height: 80px;
+    }
+    &__quote {
+      padding: 45px 25px 65px;
+    }
+  }
+  @media (max-width: 576px) {
+    &__item {
+      padding: 0;
+    }
+    &__image {
+      border: 2px solid #e3e3e3;
+    }
+  }
+  @media (max-width: 400px) {
+    &__author {
+      margin: -5px 20px 0;
+    }
+    &__picture {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
